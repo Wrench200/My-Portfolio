@@ -1,7 +1,7 @@
 import './style.css';
 import Typed from 'typed.js';
 import Glide from '@glidejs/glide';
-
+import NET from 'vanta/dist/vanta.net.min';
 const glide = new Glide("#glide", {
   type: "carousel",
   perView: 8,
@@ -31,7 +31,7 @@ const typed = new Typed("#element", {
   showCursor: false,
 });
 
-VANTA.NET({
+ NET({
   el: "#all",
   mouseControls: true,
   touchControls: true,
