@@ -1,0 +1,39 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+:root {
+  font-family: "Titillium Web", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+
+  color: white;
+  line-height: 1.5;
+
+  color-scheme: light dark;
+
+  
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.handwritten {
+  font-family: "Kaushan Script", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+.glass {
+  @apply isolate bg-white/5 backdrop-blur-md shadow-lg ring-1 ring-black/5;
+}
+.icons {
+  @apply h-16 w-16;
+}
+.li {
+  @apply flex justify-center w-1/4 mx-2;
+}
+.typed-cursor {
+  @apply w-fit h-fit bg-transparent;
+}
