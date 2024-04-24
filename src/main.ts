@@ -31,6 +31,7 @@ const typed = new Typed("#element", {
   showCursor: false,
 });
 
+
  NET({
   el: "#all",
   mouseControls: true,
