@@ -19,5 +19,5 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true
   },
-  "include": ["src"]
+  "include": ["src", "typings/glide/glide.d.ts", "typings/vanta/vanta.d.ts"]
 }
