@@ -6,14 +6,12 @@
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
-
+  scroll-behavior: smooth;
   color: white;
   line-height: 1.5;
-
+  font-size: 17px;
   color-scheme: light dark;
-
-  
-
+  --link-1: #f43f5e;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -32,8 +30,169 @@
   @apply h-16 w-16;
 }
 .li {
-  @apply flex justify-center w-1/4 mx-2;
+  @apply flex justify-center items-center;
 }
 .typed-cursor {
   @apply w-fit h-fit bg-transparent;
+}
+.active {
+  color: var(--link-1);
+  transition: color 0.3s ease-in-out;
+}
+.active:hover {
+}
+
+.navlinks {
+  position: relative;
+  transition: color 0.3s ease-in-out;
+}
+
+.navlinks:hover {
+  color: var(--link-1);
+}
+
+/* profile image styles */
+@property --gap{
+  syntax: '<length>';
+  inherits: true;
+  initial-value: 0;
+}
+@property --angle{
+  syntax: '<angle>';
+  inherits: true;
+  initial-value: 0deg;
+}
+
+.img {
+  --border: 15px;
+  --gap: 12px;
+  --color: #FA6900;
+
+  
+  aspect-ratio: 1;
+  box-sizing: border-box;
+  border-radius: 50%;
+  margin-top: 20px;
+  cursor: pointer;
+  padding: calc(var(--border) + var(--gap));
+  
+  --angle: 90deg;
+  background:
+    radial-gradient(farthest-side,var(--color) 97%,#0000 101%) 85.35% 85.35%,
+    conic-gradient(from calc(180deg - var(--angle)/2),#0000 var(--angle),var(--color) 0),
+    radial-gradient(farthest-side,var(--color) 97%,#0000 101%) 14.65% 85.35%;
+  background-size: var(--border) var(--border),auto;
+  background-repeat: no-repeat;
+  
+  -webkit-mask:
+    radial-gradient(farthest-side, 
+     #000  calc(99%  - calc(var(--border) + var(--gap))),
+     #0000 calc(100% - calc(var(--border) + var(--gap))) 
+           calc(99%  - var(--border)), 
+     #000  calc(100% - var(--border)));
+          mask:
+    radial-gradient(farthest-side, 
+     #000  calc(99%  - calc(var(--border) + var(--gap))),
+     #0000 calc(100% - calc(var(--border) + var(--gap))) 
+           calc(99%  - var(--border)), 
+     #000  calc(100% - var(--border)));
+  transition: --angle .4s,--gap .4s;
+}
+.img:hover {
+  --angle: 0deg;
+  --gap: 5px;
+}
+/* profile image styles */
+
+
+/* icons styles */
+.sec1 {
+ 
+    overflow: hidden;
+    position: relative;
+   
+}
+
+.sec1 .back {
+    height: 100%;
+    width: 100%;
+    z-index: 3
+}
+
+
+
+.sec1 .item1 {
+    position: absolute;
+    top: 40%;
+    bottom: 40%;
+    left: 0%;
+    right: 80%
+}
+
+/* .sec1 .it {
+    opacity: .4
+} */
+
+.sec1 .item2 {
+    position: absolute;
+    top: 40%;
+    bottom: 40%;
+    left: 80%;
+    right:0%;
+}
+
+.sec1 .item3 {
+    position: absolute;
+    top: 0%;
+    bottom: 80%;
+    left: 40%;
+    right:40%;
+}
+
+.sec1 .item4 {
+    position: absolute;
+   bottom: 0%;
+    top: 80%;
+    left: 40%;
+    right:40%;
+}
+
+.sec1 .item5 {
+    position: absolute;
+    top: 40%;
+    right: 40%;
+    left: 40%;
+    bottom: 40%;
+    
+}
+
+.sec1 .item6 {
+    position: absolute;
+    top: 70%;
+    bottom: 10%;
+  right: 10%;
+    left: 70%
+}
+
+.sec1 .item7 {
+    position: absolute;
+    top: 10%;
+    bottom: 70%;
+    left: 10%;
+    right: 70%
+}
+
+.sec1 .item8 {
+    position: absolute;
+   top: 10%;
+    bottom: 70%;
+    right: 10%;
+    left: 70%
+}
+.sec1 .item9{
+  position: absolute;
+top: 70%;
+    bottom: 10%;
+ left: 10%;
+    right: 70%
 }
