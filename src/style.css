@@ -7,7 +7,7 @@
   font-weight: 400;
   font-style: normal;
   scroll-behavior: smooth;
-  color: white;
+ 
   line-height: 1.5;
   font-size: 17px;
   color-scheme: light dark;
@@ -17,6 +17,11 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+ input:checked~.dot {
+    transform: translateX(100%);
+    color: ;
+  }
+
 
 .handwritten {
   font-family: "Kaushan Script", cursive;
@@ -30,7 +35,7 @@
   @apply h-16 w-16;
 }
 .li {
-  @apply flex justify-center items-center;
+  @apply flex flex-col justify-center items-center p-2 w-24 h-24 md:w-40 md:h-40 md:p-4;
 }
 .typed-cursor {
   @apply w-fit h-fit bg-transparent;

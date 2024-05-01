@@ -22,8 +22,8 @@ import NET from 'vanta/dist/vanta.net.min';
 // glide.mount();
 const typed = new Typed("#element", {
   strings: [
-    "<h2>Frontend Developer</h2>",
-    
+
+
     "<h2>Fullstack Developer</h2>"
   ],
   typeSpeed: 100,
@@ -31,31 +31,31 @@ const typed = new Typed("#element", {
   showCursor: false,
 });
 
+const effect = NET({
+  el: "#all",
+  mouseControls: true,
+  touchControls: true,
+  gyroControls: false,
+  minHeight: 200.0,
+  minWidth: 200.0,
+  scale: 1.0,
+  scaleMobile: 1.0,
+  color: 0xc5c5c5,
+  backgroundColor: 0xe6e6e6,
+  maxDistance: 16.0,
+  showDots: false,
+  points: 20.0,
+})
 
-//  NET({
-//   el: "#all",
-//   mouseControls: true,
-//   touchControls: true,
-//   gyroControls: false,
-//   minHeight: 200.0,
-//   minWidth: 200.0,
-//   scale: 1.0,
-//   scaleMobile: 1.0,
-//   color: 0x313131,
-//   backgroundColor: 0x0,
-//   maxDistance: 16.0,
-//   showDots: false,
-//   points: 20.0,
-// });
 
 // scroll and route
-function selectElementByClass(className:string): Element | null {
+function selectElementByClass(className: string): Element | null {
   return document.querySelector(`.${className}`);
 }
 const sections: any = [
   selectElementByClass('home'),
   selectElementByClass('about'),
-  // selectElementByClass('skills'),
+  selectElementByClass('skills'),
   selectElementByClass('projects'),
   selectElementByClass('contact'),
 ];
@@ -63,7 +63,7 @@ const sections: any = [
 const navItems: any = {
   home: selectElementByClass('homenav'),
   about: selectElementByClass('aboutnav'),
-  // skills: selectElementByClass('skillsnav'),
+  skills: selectElementByClass('skillsnav'),
   projects: selectElementByClass('projectnav'),
   contact: selectElementByClass('contactnav'),
 };
@@ -74,12 +74,12 @@ const observerOptions = {
   threshold: 0.7,
 };
 
-function observerCallback(entries:any, _observer:any) {
+function observerCallback(entries: any, _observer: any) {
   entries.forEach((entry: any) => {
     if (entry.isIntersecting) {
       // get the nav item corresponding to the id of the section
       // that is currently in view
-      const navItem = navItems[entry.target.id ];
+      const navItem = navItems[entry.target.id];
       // add 'active' class on the navItem
       navItem.classList.add('active');
       // remove 'active' class from any navItem that is not
@@ -99,10 +99,49 @@ sections.forEach((sec: Element) => observer.observe(sec));
 
 function getdate() {
   return new Date().getFullYear()
-  
+
 }
-const date=document.getElementsByClassName('year')
+const date = document.getElementsByClassName('year')
 date[0].innerHTML = getdate().toString();
 
-  
 
+//dark mode
+
+
+
+const lightSwitches = document.querySelectorAll('.light-switch');
+if (lightSwitches.length > 0) {
+  lightSwitches.forEach(
+    (lightSwitch:any, i) => {
+      if (localStorage.getItem('dark-mode') === 'true') {
+        lightSwitch.checked = true;
+      }
+      lightSwitch.addEventListener('change', () => {
+        const { checked } = lightSwitch;
+        lightSwitches.forEach((el:any, n) => {
+          if (n !== i) {
+            el.checked = checked;
+          }
+        });
+        if (lightSwitch.checked) {
+          document.body.classList.add('dark');
+          localStorage.setItem('dark-mode', "true");
+          effect.setOptions({
+            color: 0x282828,
+            backgroundColor: 0x0
+
+          })
+        } else {
+          document.body.classList.remove('dark');
+          localStorage.setItem('dark-mode', "false");
+          effect.setOptions({
+            color: 0xc5c5c5,
+            backgroundColor: 0xe6e6e6,
+
+          })
+        }
+      });
+    });
+}
+
+export default effect
