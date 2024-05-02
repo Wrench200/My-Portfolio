@@ -24,7 +24,7 @@ const typed = new Typed("#element", {
   strings: [
 
 
-    "<h2>Fullstack Developer</h2>"
+    "<h2>Frontend Developer</h2>"
   ],
   typeSpeed: 100,
   loop: true,
