@@ -23,6 +23,11 @@
     
     
   }
+  .text{
+    text-align:justify;
+    text-justify:inter-word;
+} 
+
 
 /* div, section, span , h1, p, a{
   border: white 2px solid; 
@@ -39,7 +44,7 @@
   @apply h-16 w-16;
 }
 .li {
-  @apply flex flex-col justify-center items-center p-2 w-24 h-24 md:w-40 md:h-40 md:p-4;
+  @apply flex flex-col justify-center items-center p-2 w-24 h-24 md:w-40 md:h-40 md:p-4 opacity-80 transition-all duration-100 hover:opacity-100;
 }
 .typed-cursor {
   @apply w-fit h-fit bg-transparent;
@@ -122,86 +127,3 @@
    
 }
 
-.sec1 .back {
-    height: 100%;
-    width: 100%;
-    z-index: 3
-}
-
-
-
-.sec1 .item1 {
-    position: absolute;
-    top: 40%;
-    bottom: 40%;
-    left: 0%;
-    right: 80%
-}
-
-/* .sec1 .it {
-    opacity: .4
-} */
-
-.sec1 .item2 {
-    position: absolute;
-    top: 40%;
-    bottom: 40%;
-    left: 80%;
-    right:0%;
-}
-
-.sec1 .item3 {
-    position: absolute;
-    top: 0%;
-    bottom: 80%;
-    left: 40%;
-    right:40%;
-}
-
-.sec1 .item4 {
-    position: absolute;
-   bottom: 0%;
-    top: 80%;
-    left: 40%;
-    right:40%;
-}
-
-.sec1 .item5 {
-    position: absolute;
-    top: 40%;
-    right: 40%;
-    left: 40%;
-    bottom: 40%;
-    
-}
-
-.sec1 .item6 {
-    position: absolute;
-    top: 70%;
-    bottom: 10%;
-  right: 10%;
-    left: 70%
-}
-
-.sec1 .item7 {
-    position: absolute;
-    top: 10%;
-    bottom: 70%;
-    left: 10%;
-    right: 70%
-}
-
-.sec1 .item8 {
-    position: absolute;
-   top: 10%;
-    bottom: 70%;
-    right: 10%;
-    left: 70%
-}
-.sec1 .item9{
-  position: absolute;
-top: 70%;
-    bottom: 10%;
- left: 10%;
-    right: 70%
-}
